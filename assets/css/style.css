@@ -140,3 +140,35 @@ footer .flinks{display:flex;gap:1.2rem}
 .skip{position:absolute;left:-999px;top:0;background:var(--accent);color:#fff;padding:.5rem 1rem;z-index:20}
 .skip:focus{left:8px}
 .skip:focus-visible{outline-color:var(--teal-light)}
+
+/* Modulo di contatto */
+.contact-form{margin-top:1.6rem;display:grid;gap:.9rem;max-width:560px}
+.contact-form .f2{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+@media (max-width:560px){.contact-form .f2{grid-template-columns:1fr}}
+.contact-form label{display:grid;gap:.3rem;font-size:.85rem;font-weight:600;color:var(--band-fg-2);min-width:0}
+.contact-form input,.contact-form select,.contact-form textarea{font:inherit;font-weight:400;font-size:.95rem;padding:.6rem .7rem;border-radius:4px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:var(--band-fg);width:100%;min-width:0}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(255,255,255,.4)}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{outline:3px solid var(--teal-light);outline-offset:1px;border-color:transparent}
+.contact-form select option{color:#1F2327}
+.contact-form .check{display:flex;gap:.6rem;align-items:flex-start;font-weight:400;font-size:.85rem}
+.contact-form .check input{width:auto;margin-top:.2rem}
+.contact-form .check a{color:var(--teal-light)}
+.contact-form button{justify-self:start}
+.form-status{font-size:.9rem;min-height:1.2em}
+.form-status.ok{color:var(--teal-light)}
+.form-status.err{color:#FFB4A8}
+/* Pagina interna (post-processor) */
+.page-hero{background:var(--band);color:var(--band-fg);padding-block:clamp(48px,7vw,80px)}
+.page-hero h1{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,3.8vw,2.6rem);line-height:1.15;letter-spacing:.01em}
+.page-hero .lead{color:var(--band-fg-2)}
+.prose{max-width:68ch}
+.prose p+p{margin-top:.9rem}
+.checklist{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;gap:.7rem}
+.checklist li{display:grid;grid-template-columns:22px 1fr;gap:.7rem;align-items:start}
+.checklist li::before{content:"";width:14px;height:14px;margin-top:.35rem;background:var(--accent);transform:skewX(-22deg)}
+.faq{display:grid;gap:.6rem;margin-top:1.8rem;max-width:72ch}
+.faq details{background:var(--bg-2);border:1px solid var(--line);border-radius:6px;padding:.9rem 1.1rem}
+.faq summary{font-weight:600;cursor:pointer}
+.faq details p{color:var(--fg-2);margin-top:.6rem;font-size:.95rem}
+.breadcrumb{font-size:.85rem;color:var(--band-fg-2);margin-bottom:1rem}
+.breadcrumb a{color:var(--teal-light);text-decoration:none}

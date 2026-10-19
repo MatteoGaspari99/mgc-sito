@@ -12,4 +12,5 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url><loc>https://www.mgc-italia.it/post-processor.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
 </urlset>

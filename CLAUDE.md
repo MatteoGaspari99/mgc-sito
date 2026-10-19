@@ -19,6 +19,9 @@ Vedi `DEPLOY.md`: caricamento FTP/File Manager su Register.it nella cartella pub
 ## Idee già discusse, non ancora fatte
 
 - Pagina Corsi con schede e modulo di richiesta informazioni (richiede un backend o un servizio form esterno → privacy).
-- Pagina Post-processor con elenco controlli/macchine gestiti.
+- Pagina Post-processor: aggiungere 3-5 casi reali (controllo, macchina, problema, risultato) quando Massimo li fornisce.
+- Pagina Corsi e pagina Cinematiche/Sviluppo software, sullo stesso modello di post-processor.html.
+- Modulo di contatto: oggi apre un mailto; attivare Formspree (vedi README) e aggiornare la privacy.
+- Google Business Profile e Search Console da attivare (vedi piano marketing in chat).
 - Foto reali di Massimo e Matteo al posto delle iniziali.
 - Font ospitati in locale (`assets/fonts/`) per eliminare la dipendenza da Google e semplificare la privacy.

@@ -7,8 +7,10 @@ Dominio di destinazione: **https://www.mgc-italia.it** (hosting Register.it).
 ## Struttura
 
 ```
-index.html            Home (pagina singola con ancore: servizi, post-processor, formazione, chi siamo, contatti)
+index.html            Home (servizi, formazione, chi siamo, contatti con modulo)
+post-processor.html   Pagina servizio: post-processor e cinematiche, FAQ, modulo di richiesta
 privacy.html          Privacy e cookie policy
+assets/js/main.js     Menu mobile, pulsanti Copia, modulo di contatto
 assets/css/style.css  Foglio di stile (token colore e font del marchio)
 assets/img/           Logo, favicon, immagine Open Graph
 favicon.ico
@@ -39,6 +41,10 @@ Aprire `index.html` nel browser, oppure:
 python3 -m http.server 8080
 # poi http://localhost:8080
 ```
+
+## Modulo di contatto
+
+Senza configurazione il modulo apre il programma di posta del visitatore con l'email precompilata (nessun dato passa da server terzi). Per ricevere i messaggi direttamente, creare un modulo su [Formspree](https://formspree.io) e aggiungere `data-endpoint="https://formspree.io/f/XXXX"` al tag `<form class="contact-form">` in `index.html` e `post-processor.html`; poi aggiornare `privacy.html` (punto 2 e 5) citando Formspree come responsabile del trattamento.
 
 ## Cose da fare prima della pubblicazione
 

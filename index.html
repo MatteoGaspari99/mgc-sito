@@ -68,7 +68,7 @@
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-links">Menu</button>
       <ul id="menu-links">
         <li><a href="#servizi">Servizi</a></li>
-        <li><a href="#post">Post-processor</a></li>
+        <li><a href="post-processor.html">Post-processor</a></li>
         <li><a href="#formazione">Formazione</a></li>
         <li><a href="#team">Chi siamo</a></li>
         <li><a href="#contatti">Contatti</a></li>
@@ -138,7 +138,7 @@
         <div class="mark" aria-hidden="true"></div>
         <h3>Supporto</h3>
         <ul>
-          <li>Post-processor e cinematiche fatti sulla vostra macchina</li>
+          <li><a href="post-processor.html">Post-processor e cinematiche</a> fatti sulla vostra macchina</li>
           <li>Programmazione CNC conto terzi, quando serve una mano in più</li>
           <li>Assistenza tecnica in produzione, anche a bordo macchina</li>
         </ul>
@@ -162,6 +162,7 @@
         <li><div><b>Collaudiamo e consegniamo</b><span>Prova sui vostri pezzi, documentazione e assistenza alle prime lavorazioni.</span></div></li>
       </ol>
     </div>
+    <p style="margin-top:1.6rem"><a class="btn btn-ghost" href="post-processor.html">Tutto sui post-processor e le cinematiche</a></p>
     <!-- role="list" esplicito: con list-style:none alcuni screen reader perdono la semantica di lista -->
     <ul class="machines" role="list" aria-label="Tipi di lavorazione coperti">
       <li><b>FRESATURA 3–5 ASSI</b><span>Centri di lavoro verticali e orizzontali</span></li>
@@ -236,6 +237,30 @@
       <p class="eyebrow">Contatti</p>
       <h2>Parliamone</h2>
       <p class="lead">Avete una macchina nuova da mettere in produzione, un post-processor che non va o un corso da organizzare? Chiamateci o scriveteci: vi rispondiamo entro un giorno lavorativo.</p>
+      <form class="contact-form" novalidate>
+        <div class="f2">
+          <label>Nome e cognome<input type="text" name="nome" id="c-nome" required autocomplete="name"></label>
+          <label>Azienda<input type="text" name="azienda" id="c-azienda" autocomplete="organization"></label>
+        </div>
+        <div class="f2">
+          <label>Email<input type="email" name="email" id="c-email" required autocomplete="email"></label>
+          <label>Telefono<input type="tel" name="telefono" id="c-tel" autocomplete="tel"></label>
+        </div>
+        <label>Argomento
+          <select name="argomento" id="c-arg">
+            <option>Post-processor o cinematica</option>
+            <option>Corso di formazione</option>
+            <option>Consulenza CAM</option>
+            <option>Sviluppo software / add-in</option>
+            <option>Altro</option>
+          </select>
+        </label>
+        <label>Macchina e controllo (se riguarda un post-processor)<input type="text" name="macchina" id="c-mac" placeholder="es. DMG Mori NLX 2500, Fanuc 0i-TF"></label>
+        <label>Messaggio<textarea name="messaggio" id="c-msg" rows="4" required></textarea></label>
+        <label class="check"><input type="checkbox" name="privacy" id="c-priv" required><span>Ho letto l'<a href="privacy.html">informativa privacy</a> e acconsento al trattamento dei dati per rispondere alla mia richiesta.</span></label>
+        <button class="btn btn-primary" type="submit">Invia la richiesta</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
     <div class="cbox">
       <dl>
@@ -260,67 +285,6 @@
   </div>
 </footer>
 
-<script>
-(function(){
-  'use strict';
-
-  /* Menu mobile: il bottone "Menu" mostra/nasconde la lista dei link (solo sotto i 900px, vedi CSS) */
-  var nav=document.querySelector('.menu'), toggle=document.querySelector('.menu-toggle');
-  if(nav&&toggle){
-    function setOpen(open){
-      nav.classList.toggle('open',open);
-      toggle.setAttribute('aria-expanded',open?'true':'false');
-    }
-    toggle.addEventListener('click',function(){ setOpen(!nav.classList.contains('open')); });
-    // Chiude il menu quando si sceglie una voce o si preme Esc
-    nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ setOpen(false); }); });
-    document.addEventListener('keydown',function(e){
-      if(e.key==='Escape'&&nav.classList.contains('open')){ setOpen(false); toggle.focus(); }
-    });
-  }
-
-  /* Pulsanti "Copia": navigator.clipboard, con fallback su execCommand e infine sulla selezione del testo */
-  var live=document.getElementById('copy-live');
-  function announce(msg){
-    if(!live) return;
-    live.textContent='';
-    setTimeout(function(){ live.textContent=msg; },50);
-  }
-  function selectText(el){
-    var r=document.createRange(); r.selectNodeContents(el);
-    var s=window.getSelection(); s.removeAllRanges(); s.addRange(r);
-  }
-  function legacyCopy(text){
-    var ta=document.createElement('textarea');
-    ta.value=text; ta.setAttribute('readonly',''); ta.setAttribute('aria-hidden','true');
-    ta.style.position='fixed'; ta.style.left='-9999px';
-    document.body.appendChild(ta); ta.select();
-    var ok=false;
-    try{ ok=document.execCommand('copy'); }catch(e){ ok=false; }
-    document.body.removeChild(ta);
-    return ok;
-  }
-  document.querySelectorAll('.copy').forEach(function(b){
-    b.addEventListener('click',function(){
-      var text=b.dataset.copy, label=b.dataset.label||'Testo';
-      function done(){
-        b.textContent='Copiato';
-        announce(label+' copiato negli appunti');
-        setTimeout(function(){ b.textContent='Copia'; },1500);
-      }
-      function fail(){
-        var target=document.getElementById(b.dataset.target);
-        if(target) selectText(target);
-        announce('Copia automatica non disponibile: il testo è selezionato, copialo manualmente');
-      }
-      if(navigator.clipboard&&navigator.clipboard.writeText){
-        navigator.clipboard.writeText(text).then(done,function(){ legacyCopy(text)?done():fail(); });
-      }else{
-        legacyCopy(text)?done():fail();
-      }
-    });
-  });
-})();
-</script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
