@@ -44,14 +44,14 @@ header{position:sticky;top:0;z-index:9;background:var(--band);color:var(--band-f
 .brand span{font-family:var(--display);font-weight:800;font-size:.95rem;letter-spacing:.08em;white-space:nowrap}
 .nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1.6rem;font-size:.92rem;font-weight:500}
 .nav ul a{text-decoration:none;color:var(--band-fg-2);white-space:nowrap}
-.nav ul a:hover{color:var(--band-fg)}
+.nav ul a:hover,.nav ul a[aria-current="page"]{color:var(--band-fg)}
 .nav .btn{padding:.55rem 1rem;font-size:.88rem}
 .menu-toggle{display:none;background:transparent;color:var(--band-fg);border:1.5px solid rgba(255,255,255,.35);border-radius:4px;padding:.5rem .8rem;font:inherit;font-size:.88rem;font-weight:600;cursor:pointer}
 .menu-toggle:hover{border-color:var(--band-fg)}
 .menu-toggle[aria-expanded="true"]{background:rgba(255,255,255,.08)}
-/* Sotto i 900px la lista dei link sparisce e compare il bottone "Menu";
+/* Sotto i 1080px la lista dei link sparisce e compare il bottone "Menu" (sei voci non ci stanno prima);
    il pannello si apre sotto l'header (position:absolute rispetto all'header, che è sticky) */
-@media (max-width:900px){
+@media (max-width:1080px){
   .nav{gap:.75rem}
   .menu{margin-left:auto}
   .menu-toggle{display:inline-flex;align-items:center}
@@ -157,7 +157,13 @@ footer .flinks{display:flex;gap:1.2rem}
 .form-status{font-size:.9rem;min-height:1.2em}
 .form-status.ok{color:var(--teal-light)}
 .form-status.err{color:#FFB4A8}
-/* Pagina interna (post-processor) */
+/* Bottone con bordo sulle sezioni chiare (il .btn-ghost è pensato per le bande scure) */
+.btn-outline{border-color:var(--chip-fg);color:var(--chip-fg)}
+.btn-outline:hover{background:var(--chip)}
+/* Titoli dei corsi in home: link alla pagina del corso */
+.course h3 a{color:inherit;text-decoration-color:var(--line);text-underline-offset:4px}
+.course h3 a:hover{color:var(--accent)}
+/* Pagine interne (post-processor, corsi) */
 .page-hero{background:var(--band);color:var(--band-fg);padding-block:clamp(48px,7vw,80px)}
 .page-hero h1{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,3.8vw,2.6rem);line-height:1.15;letter-spacing:.01em}
 .page-hero .lead{color:var(--band-fg-2)}

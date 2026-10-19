@@ -20,7 +20,7 @@ Vedi `DEPLOY.md`: caricamento FTP/File Manager su Register.it nella cartella pub
 
 - Pagina Corsi con schede e modulo di richiesta informazioni (richiede un backend o un servizio form esterno → privacy).
 - Pagina Post-processor: aggiungere 3-5 casi reali (controllo, macchina, problema, risultato) quando Massimo li fornisce.
-- Pagina Corsi e pagina Cinematiche/Sviluppo software, sullo stesso modello di post-processor.html.
+- Pagina Cinematiche/Sviluppo software, sullo stesso modello di post-processor.html. (Corsi ESPRIT e Corsi NX CAD fatte: `corsi-esprit.html`, `corsi-nx.html`.)
 - Modulo di contatto: oggi apre un mailto; attivare Formspree (vedi README) e aggiornare la privacy.
 - Google Business Profile e Search Console da attivare (vedi piano marketing in chat).
 - Foto reali di Massimo e Matteo al posto delle iniziali.

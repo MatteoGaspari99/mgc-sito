@@ -26,13 +26,14 @@ Questo file riassume tutto quello che è stato deciso e fatto nella chat Cowork 
 
 - Repository GitHub: `MatteoGaspari99/mgc-sito`, branch `main`, GitHub Pages attivo da root con custom domain `www.mgc-italia.it` (file `CNAME` e `.nojekyll` presenti).
 - DNS su Register.it già configurato: `www` CNAME → `matteogaspari99.github.io.`; apex A → 185.199.108/109/110/111.153. Email e PEC non toccate.
-- Da verificare su GitHub → Settings → Pages: "DNS check successful" e spunta **Enforce HTTPS**.
+- GitHub Pages: DNS check superato, certificato HTTPS attivo per `www` e apex, **Enforce HTTPS** attivo (19/10/2026).
 - Hosting Register non acquistato: il sito vive su GitHub Pages.
 
 ## Cose ancora da fare
 
 - [ ] Casi reali nella pagina post-processor (3–5: controllo, macchina, particolarità, risultato) quando Massimo li fornisce.
-- [ ] Pagina Corsi (programmi, durata, date) e pagina Sviluppo software, sul modello di `post-processor.html`.
+- [x] Pagine `corsi-esprit.html` e `corsi-nx.html` (19/10/2026). Da far rivedere a Massimo i contenuti dei singoli corsi; mancano durate e date.
+- [ ] Pagina Sviluppo software, sul modello di `post-processor.html`.
 - [ ] Modulo di contatto: oggi apre un mailto; attivare Formspree e aggiornare `privacy.html` (vedi README).
 - [ ] Google Business Profile, Search Console (inviare `sitemap.xml`), recensioni Google.
 - [ ] Chiedere a Hexagon/ESPRIT e Siemens l'inserimento tra i partner/centri di formazione con link al sito.

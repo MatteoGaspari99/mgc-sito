@@ -2,7 +2,7 @@
 (function(){
   'use strict';
 
-  /* Menu mobile: il bottone "Menu" mostra/nasconde la lista dei link (solo sotto i 900px, vedi CSS) */
+  /* Menu mobile: il bottone "Menu" mostra/nasconde la lista dei link (solo sotto i 1080px, vedi CSS) */
   var nav=document.querySelector('.menu'), toggle=document.querySelector('.menu-toggle');
   if(nav&&toggle){
     function setOpen(open){
